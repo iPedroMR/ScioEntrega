@@ -1,0 +1,83 @@
+CREATE TABLE tb_materia (
+ NUMBER NOT NULL,
+nm_materia VARCHAR(30) NOT NULL,
+ds_materia VARCHAR(60) NOT NULL
+);
+
+ALTER TABLE tb_materia ADD CONSTRAINT tb_materia_pk PRIMARY KEY (  );
+
+CREATE TABLE tb_sugestao (
+cd_sugestao NUMBER NOT NULL,
+ds_sugestao VARCHAR(60),
+tb_usuario_cd_user NUMBER NOT NULL
+);
+
+ALTER TABLE tb_sugestao ADD CONSTRAINT tb_sugestao_pk PRIMARY KEY ( cd_sugestao );
+
+CREATE TABLE tb_user_materia (
+tb_usuario_cd_user NUMBER NOT NULL,
+tb_materia_ NUMBER NOT NULL
+);
+
+CREATE TABLE tb_usuario (
+cd_user NUMBER NOT NULL,
+nm_user VARCHAR(20) NOT NULL,
+lg_user VARCHAR(50) NOT NULL,
+sn_user VARCHAR(20) NOT NULL,
+st_user VARCHAR(20) NOT NULL,
+cpf_user VARCHAR(20),
+sx_user CHAR(1),
+dica_user VARCHAR(60),
+email_user VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE tb_usuario ADD CONSTRAINT tb_usuario_pk PRIMARY KEY ( cd_user );
+
+ALTER TABLE tb_sugestao
+ADD CONSTRAINT tb_sugestao_tb_usuario_fk FOREIGN KEY ( tb_usuario_cd_user )
+REFERENCES tb_usuario ( cd_user );
+
+ALTER TABLE tb_user_materia
+ADD CONSTRAINT tb_user_materia_tb_materia_fk FOREIGN KEY ( tb_materia_ )
+REFERENCES tb_materia (  );
+
+ALTER TABLE tb_user_materia
+ADD CONSTRAINT tb_user_materia_tb_usuario_fk FOREIGN KEY ( tb_usuario_cd_user )
+REFERENCES tb_usuario ( cd_user );
+
+
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Danielle Saluti', 'salutidanielle@gmail.com', 'dsaluti', '0705200', 'ativo', '4905645588', 'feminino','Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Guilherme Oliveira', 'gui.holiveira@gmail.com', 'goliver', '2345678', 'ativo', '49056455688', 'masculino', 'Palmeiras');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Pedro Henrique Medeiros Rezende', 'ipedromr@hotmail.com','pedroh', 'Pedro.Hernque','2345638', 'ativo', '49056455628', 'masculino', 'Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Thomás', 'thomas@gmail.com', 'Thomás02', '8564792', 'ativo', '4905547788688', 'masculino', 'São Paulo');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Caio Belga', 'caioeira@gmail.com', 'BelgaCaio', '235468878', 'ativo', '490586887548', 'masculino', 'Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Adelaide', 'adelaide@gmail.com', 'Adelaide03', '234454548', 'ativo', '49056455688', 'feminino', 'Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Giovanna', 'giovanna@gmail.com', 'Gio654', '070554870', 'ativo', '585594998', 'feminino', 'Santos');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Sávio', 'savio@gmail.com', 'savio23', '6478778', 'inativo', '48792355688', 'masculino', 'Flamengo');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Felipe André', 'feipeandre@gmail.com', 'fandrade', '5647892', 'ativo', '454835688', 'masculino','Grêmio');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Giulia Taner', 'gi.xa@gmail.com', 'GiuTaner', '85848798', 'ativo', '4925454', 'masculino', 'Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'Stephanie Li', 'stepanhi@gmail.com', 'NieLi', '2548858', 'ativo', '4905644878', 'feminino', 'Corinthians');
+insert into tb_usuario( nm_user, email_user, lg_user, sn_user, st_user, cpf_user, sx_user, dica_senha) values(  'André Suzano', 'andre@gmail.com', 'AndreSu','45869258', 'inativo', '4005556789', 'masculino','Corinthians');
+
+
+insert into tb_materia( nm_materia, ds_materia) values(  'Crase', 'Nessa matéria os alunos terão acesso ao conceito e aos exemplos de como usar crase nos dias de hoje');
+insert into tb_materia( nm_materia, ds_materia) values( 'Vírgula', 'Nessa matéria todos alunos terão acesso a como utilizar vírgula de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Ortoepia', 'Nessa matéria todos alunos terão acesso a como utilizar ortoepia de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Prosodia', 'Nessa matéria todos alunos terão acesso a como utilizar a prosodia de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Concordancia', 'Nessa matéria todos alunos terão acesso a como utilizar a concordancia em frases de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Regência', 'Nessa matéria todos alunos terão acesso a como utilizar a regência nas frases' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Sintaxe', 'Nessa matéria todos alunos terão acesso a sintaxe e exemplos de frase com sintaxe' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Pronome', 'Nessa matéria todos alunos terão acesso a como utilizar pronome de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Ortografia', 'Nessa matéria todos alunos terão acesso a como utilizar ortografia de forma correta' );
+insert into tb_materia( nm_materia, ds_materia) values( 'Morfologia', 'Nessa matéria todos alunos terão acesso a como utilizar morfologia de forma correta' );
+
+insert into tb_sugestao( ds_sugestao) values( 'A dashboard não traz como está meu desenvolvimento');
+insert into tb_sugestao( ds_sugestao) values( 'O site poderia ser mais dinâmico' );
+insert into tb_sugestao( ds_sugestao) values(  'Acredito que algumas perguntas não estão sendo respondidas pelo chatBot' );
+insert into tb_sugestao( ds_sugestao) values( 'Sugiro que coloquem mais matérias' );
+insert into tb_sugestao( ds_sugestao) values(  'Achei que a plataforma não informa bem as dúvidas frequentes' );
+insert into tb_sugestao( ds_sugestao) values(  'Não há muitas matérias, gostaria de aprender mais' );
+insert into tb_sugestao( ds_sugestao) values(  'Bem legal a interação com o chatbot, mas ele não responde direito às vezes' );
+insert into tb_sugestao( ds_sugestao) values(  'Não consigo colocar imagem no meu perfil, arrumem isso' );
+insert into tb_sugestao( ds_sugestao) values(  'Bem legal, só acho que deveria ter um app, seria mais "comodo" ' );
+insert into tb_sugestao( ds_sugestao) values( 'Gostei da aplicação, vocês poderiam ter mais matérias' );

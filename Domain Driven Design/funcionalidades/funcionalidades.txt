@@ -1,0 +1,9 @@
+Perfil: Na tela de perfil o usuário pode editar seus dados.
+
+Memorizar: Esta funcionalidade funciona como um "teste" para auxiliar na memorização do aluno.
+
+Gerenciar: Aba em que o administrador tem acesso aos dados dos usuários.
+
+Ajuda: Na tela de ajuda, o usuário pode visualizar as dúvidas frequentes.
+
+Matéria: Na tela de matéria, o usuário pode visualizar todas as matérias com suas respectivas descrições. Além de poder registrar sua sugestão. 
