@@ -17,10 +17,10 @@
   * JSTL
   
  * Lista de Nomes: 
-  - 83859 - Danielle Saluti Fialho
-  - 83557 - Guilherme Henrique de Oliveira
-  - 83731 - Otávio Ramos Zanelatto
-  - 84015 - Paola Rodrigues Frizon
-  - 82159 - Pedro Henrique Medeiros Rezende
+   * 83859 - Danielle Saluti Fialho
+   * 83557 - Guilherme Henrique de Oliveira
+   * 83731 - Otávio Ramos Zanelatto
+   * 84015 - Paola Rodrigues Frizon
+   * 82159 - Pedro Henrique Medeiros Rezende
  
 
